@@ -10,22 +10,8 @@
         <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
 
         <v-toolbar-title>My files</v-toolbar-title>
-
-        <v-tabs
-            v-model="tab"
-        >
-          <v-tab value="home">HOME</v-tab>
-          <v-tab value="one">보안퀴즈</v-tab>
-          <v-tab value="edu">보안동영상시청</v-tab>
-          <v-tab value="three">점수확인</v-tab>
-        </v-tabs>
-
-        <v-spacer></v-spacer>
-
         <v-btn variant="text" icon="mdi-magnify"></v-btn>
-
         <v-btn variant="text" icon="mdi-filter"></v-btn>
-
         <v-btn variant="text" icon="mdi-dots-vertical"></v-btn>
       </v-app-bar>
 
@@ -35,11 +21,17 @@
           temporary
       >
         <v-list>
+
+          <h2>가나다라</h2>
+
+
+          <v-divider></v-divider>
           <v-list-item
               v-for="item in items"
               :key="item.value"
               :to="item.value"
               :title="item.title"
+              :prepend-icon="item.icon"
           >
           </v-list-item>
         </v-list>
@@ -68,20 +60,24 @@ export default {
     group: null,
     items: [
       {
-        title: 'Foo',
+        title: '홈',
         value: '/',
+        icon: 'mdi-home',
       },
       {
-        title: 'Bar',
+        title: '사용자 조회',
         value: '/about',
+        icon: 'mdi-forum',
       },
       {
-        title: 'Fizz',
+        title: '자산정리',
         value: 'fizz',
+        icon: 'mdi-home',
       },
       {
         title: 'Buzz',
         value: 'buzz',
+        icon: 'mdi-home',
       },
     ],
   }),

@@ -14,7 +14,10 @@
   "main": "background.js",
   "dependencies": {
     "@mdi/font": "5.9.55",
+    "ag-grid-community": "^28.2.0",
+    "ag-grid-vue3": "^28.2.0",
     "core-js": "^3.8.3",
+    "material-design-iconic-font": "^2.2.0",
     "roboto-fontface": "*",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
