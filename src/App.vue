@@ -3,17 +3,23 @@
     <v-layout>
       <!-- <v-system-bar color="deep-purple darken-3"></v-system-bar> -->
 
+      <v-system-bar
+          color="blue"
+          style="-webkit-app-region: drag;">
+        와이파이, 안테나 자린가??
+      </v-system-bar>
       <v-app-bar
           color="blue"
           density="compact"
       >
         <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
 
-        <v-toolbar-title>My files</v-toolbar-title>
+        <v-toolbar-title>닦달!</v-toolbar-title>
         <v-btn variant="text" icon="mdi-magnify"></v-btn>
         <v-btn variant="text" icon="mdi-filter"></v-btn>
         <v-btn variant="text" icon="mdi-dots-vertical"></v-btn>
       </v-app-bar>
+
 
       <v-navigation-drawer
           v-model="drawer"
@@ -65,17 +71,17 @@ export default {
         icon: 'mdi-home',
       },
       {
-        title: '사용자 조회',
+        title: '어바웃!',
         value: '/about',
         icon: 'mdi-forum',
       },
       {
-        title: '자산정리',
+        title: '링크없음',
         value: 'fizz',
         icon: 'mdi-home',
       },
       {
-        title: 'Buzz',
+        title: '테스트테스트',
         value: 'buzz',
         icon: 'mdi-home',
       },
@@ -90,16 +96,10 @@ export default {
 </script>
 
 <style>
-nav {
-  padding: 30px;
+::-webkit-scrollbar {
+  display: none;
+}
+.body {
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>

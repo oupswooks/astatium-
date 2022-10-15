@@ -1,9 +1,10 @@
 'use strict'
 
-import { app, protocol, BrowserWindow } from 'electron'
+import { app, protocol, Menu, Tray, BrowserWindow } from 'electron'
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 import installExtension, { VUEJS3_DEVTOOLS } from 'electron-devtools-installer'
 const isDevelopment = process.env.NODE_ENV !== 'production'
+
 
 // Scheme must be registered before the app is ready
 protocol.registerSchemesAsPrivileged([
@@ -35,6 +36,22 @@ async function createWindow() {
     win.loadURL('app://./index.html')
   }
 }
+
+let tray = null
+
+//app.on('ready', () => {
+//  tray = new Tray('/favicon.ico') // 현재 애플리케이션 디렉터리를 기준으로 하려면 `__dirname + '/images/tray.png'` 형식으로 입력해야 합니다.
+//  const contextMenu = Menu.buildFromTemplate([
+//   {label: 'Item1', type: 'radio'},
+//    {label: 'Item2', type: 'radio'},
+//    {label: 'Item3', type: 'radio', checked: true},
+//    {label: 'Item4', type: 'radio'}
+//  ])
+//  tray.setToolTip('이것은 나의 애플리케이션 입니다!')
+//  tray.setContextMenu(contextMenu)
+//})
+
+
 
 // Quit when all windows are closed.
 app.on('window-all-closed', () => {
